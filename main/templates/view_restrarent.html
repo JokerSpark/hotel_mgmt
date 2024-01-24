@@ -1,0 +1,39 @@
+
+{% extends 'main_admin_header.html' %}
+
+{% block title %}
+<title>STAFF MGMT</title>
+{% endblock %}
+room management
+{% block h1 %}
+<p>View Restrarent </p>
+
+<a href="/add_rest"><button>Add Restrarent</button></a>
+<a href="/view_rest"><button>View Restrarent</button></a>
+
+<h1>View Restrarent</h1>
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Restrarent Name</th>
+        <th>Restrarent Type</th>
+        <th>Restrarent user</th>
+        <th>Operation</th>
+        
+
+    </tr>
+
+    {% for i in form %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.res_name}}</td>
+        <td>{{i.res_type}}</td>
+        <td>{{i.res_user}}</td>
+        <td><button><a href="/update_rest/{{i.id}}">Update</a></button> <button><a href="/delete_rest/{{i.id}}">delete</a></button></td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+
+{% endblock %}

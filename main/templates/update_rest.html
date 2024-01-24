@@ -1,0 +1,39 @@
+{% extends 'main_admin_header.html' %}
+
+{% block title %}
+<title>STAFF MGMT</title>
+{% endblock %}
+room management
+{% block h1 %}
+<p>Add restrarent </p>
+
+
+<a href="/add_rest"><button>Add restrarent</button></a>
+<a href="/view_rest"><button>View restrarent</button></a>
+
+<h1>update Data</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label for="">Restrarent Name</label><input type="text" name ="res_name" value="{{data.res_name}}"><br><br>
+   
+    <label for="">Restrarent Type</label>
+    <select name="res_type" value="{{data.res_type}}">
+        <option value="Fast food">Fast food</option>
+        <option value="Cafeteria">Cafeteria</option>
+        <option value="Bakery">Bakery</option>
+        <option value="Family Style">Family Style</option>
+        
+      </select>
+      <br><br>
+      <label for="">Restrarent User</label><input type="text" name ="res_user" value="{{data.res_user}}"><br><br>
+
+
+    <button type="submit">Update</button>
+    
+
+
+
+</form>
+{% endblock %}

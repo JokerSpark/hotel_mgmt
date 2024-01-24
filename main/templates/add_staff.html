@@ -1,0 +1,20 @@
+
+    {% extends 'main_admin_header.html' %}
+
+    {% block title %}
+    <title>STAFF MGMT</title>
+    {% endblock %}
+    room management
+    {% block h1 %}
+  <p>Add Staff </p>
+
+
+  <a href="/add_staff"><button>Add Staff</button></a>
+  <a href="/view_staff"><button>View Staff</button></a>
+
+  <form method="post">
+    {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Add Staff</button>
+</form>
+{% endblock %}

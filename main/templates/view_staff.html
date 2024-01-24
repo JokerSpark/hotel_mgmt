@@ -1,0 +1,40 @@
+
+{% extends 'main_admin_header.html' %}
+
+{% block title %}
+<title>STAFF MGMT</title>
+{% endblock %}
+room management
+{% block h1 %}
+<p>View Staff </p>
+
+<a href="/add_staff"><button>Add Staff</button></a>
+<a href="/view_staff"><button>View Staff</button></a>
+
+<h1>View Staff</h1>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Staff Name</th>
+        <th>Staff Adress</th>
+        <th>Staff number</th>
+        <th>Staff Position</th>
+        <th>Operation</th>
+
+    </tr>
+
+    {% for i in form %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.Staff_name}}</td>
+        <td>{{i.Staff_address}}</td>
+        <td>{{i.Staff_no}}</td>
+        <td>{{i.Staff_position}}</td>
+        <td><button><a href="/update_staff/{{i.id}}">Update</a></button> <button><a href="/del_staff/{{i.id}}">delete</a></button></td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+
+{% endblock %}

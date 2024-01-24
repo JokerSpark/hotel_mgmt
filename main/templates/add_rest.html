@@ -1,0 +1,21 @@
+{% extends 'main_admin_header.html' %}
+    
+{% block title %}
+<title>ROOM MGMT</title>
+{% endblock %}
+room management
+
+{% block h1 %}
+<p>Add Restrarent</p>
+
+<a href="/add_rest"><button>Add Restrarent</button></a>
+<a href="/view_rest"><button>View Restrarent</button></a>
+
+
+<form method="post">
+    {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Add Restrarent</button>
+</form>
+
+{% endblock %}

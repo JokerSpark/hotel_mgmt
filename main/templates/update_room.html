@@ -1,0 +1,36 @@
+{% extends 'main_admin_header.html' %}
+
+{% block title %}
+<title>STAFF MGMT</title>
+{% endblock %}
+room management
+{% block h1 %}
+<p>Add Staff </p>
+
+
+<a href="/add_room"><button>Add Room</button></a>
+<a href="/view_room"><button>View Room</button></a>
+
+<h1>update Data</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label for="">Room number</label><input type="text" name ="room_no" value="{{data.room_no}}"><br><br>
+   
+    <label for="">Room Type</label>
+    <select name="room_type" value="{{data.room_type}}">
+        <option value="Deluxe Room">Deluxe Room</option>
+        <option value="Single room">Single room</option>
+        <option value="King room">King room</option>
+        
+      </select>
+      <br><br>
+
+    <button type="submit">Update</button>
+    
+
+
+
+</form>
+{% endblock %}
